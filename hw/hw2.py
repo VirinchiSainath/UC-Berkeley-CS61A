@@ -14,6 +14,12 @@ def identity(x):
 def increment(x):
     return x + 1
 
+def compose1(f, g):
+    """Return a function h, such that h(x) = f(g(x))."""
+    def h(x):
+        return f(g(x))
+    return h
+
 def piecewise(f, g, b):
     """Returns the piecewise function h where:
 
@@ -28,11 +34,15 @@ def piecewise(f, g, b):
     >>> abs_value(-1)
     1
     """
+    # BEGIN SOLUTION 
+
     def h(x):
         if x < b:
             return f(x)
         return g(x)
     return h
+
+    # END SOLUTION 
 
 
 def intersects(f, x):
@@ -64,7 +74,15 @@ def repeated(f, n):
     >>> repeated(square, 4)(5) # square(square(square(square(5))))
     152587890625
     """
-    "*** YOUR CODE HERE ***"
+    
+    # BEGIN SOLUTION 
+    
+    repeated_function = lambda x : x
+    while n > 0:
+        repeated_function, n = compose1(f, repeated_function), n - 1
+    return repeated_function
+
+    # END SOLUTION 
 
 ###################
 # Church Numerals #
