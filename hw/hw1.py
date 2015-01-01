@@ -111,12 +111,6 @@ def hailstone(n):
     7
     """
 
-    Pick a positive integer n as the start.
-If n is even, divide it by 2.
-If n is odd, multiply it by 3 and add 1.
-Continue this process until n is 1.
-
-
     # BEGIN SOLUTION
 
      while n != 1:
