@@ -2,6 +2,8 @@
 # Name:
 # Login:
 
+# http://www-inst.eecs.berkeley.edu/~cs61a/fa14/hw/released/hw1.html
+
 from operator import add, sub
 
 def a_plus_abs_b(a, b):
@@ -73,13 +75,25 @@ def with_if_function():
     return if_function(c(), t(), f())
 
 def c():
-    "*** YOUR CODE HERE ***"
+    # BEGIN SOLUTION
+
+    return 1 > 0
+
+    # END SOLUTION
 
 def t():
-    "*** YOUR CODE HERE ***"
+    # BEGIN SOLUTION
+
+    return 1
+
+    # END SOLUTION
 
 def f():
-    "*** YOUR CODE HERE ***"
+    # BEGIN SOLUTION
+
+    return 0
+
+    # END SOLUTION
 
 def hailstone(n):
     """Print the hailstone sequence starting at n and return its
@@ -96,7 +110,24 @@ def hailstone(n):
     >>> a
     7
     """
-    "*** YOUR CODE HERE ***"
+
+    Pick a positive integer n as the start.
+If n is even, divide it by 2.
+If n is odd, multiply it by 3 and add 1.
+Continue this process until n is 1.
+
+
+    # BEGIN SOLUTION
+
+     while n != 1:
+        if n % 2 == 0: #even
+            n = n / 2
+            print (n)
+        else: #odd
+            n = n*3+1
+            print (n)
+
+    # END SOLUTION
 
 challenge_question_program = """
 "*** YOUR CODE HERE ***"
